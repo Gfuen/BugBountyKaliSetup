@@ -173,7 +173,7 @@ python3 -m pipx ensurepath
 
 #Make setup folder
 cd /home/kali/Desktop/PWK
-git clone https://github.com/Gfuen/Setup.git
+git clone https://github.com/Gfuen/BugBounty.git
 
 #Init Metasploit
 systemctl start postgresql
