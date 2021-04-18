@@ -1,15 +1,15 @@
 #!/bin/bash
 
-# make sure we're root
-if [ "$HOME" != "/root" ]
-then
-    echo -e "${GREEN}[*] Please run as root.${NC}"
-    exit 1
-fi
-
 #Colors
 GREEN='\033[0;32m'
 NC='\033[0m'
+
+# make sure we're root
+if [[ $(id -u) == 0 ]]; then
+  echo -e "${GREEN}[*] Running with SUDO${NC}"
+else  echo 'Error: Sadly you need to run me with sudo.'
+  exit 1
+fi
 
 #Install git if not installed
 apt-get install -y git
