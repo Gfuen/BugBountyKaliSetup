@@ -20,13 +20,13 @@ POWERLEVEL9K_DIR_HOME_FOREGROUND="white"
 POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="white"
 POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="white"
 
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(virtualenv status command_execution_time background_jobs todo ram load rvm time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(virtualenv status command_execution_time time)
 
 # more prompt elements that are suggested
 # (public_ip docker_machine pyenv nvm)          https://github.com/bhilburn/powerlevel9k#prompt-customization
 # Note: using public_ip is cool but when connection is down prompt waits for 10-20 seconds
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh os_icon context dir rbenv vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir rbenv vcs)
 
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
@@ -74,12 +74,12 @@ POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-
+    git
     )
 #plugins+=(zsh-nvm)
 
 source $ZSH/oh-my-zsh.sh
-source ~/.oh-my-zsh/plugins/zsh-autocomplete
+source ~/.oh-my-zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"

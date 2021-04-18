@@ -288,6 +288,7 @@ export USER="OS-86533"
 export PASS="7vZGkrq9xL1"
 export FTP_USER="offsec"
 export FTP_PASS="lab"
+export TERM="xterm-256color"
 
 
 #Bash Profile
