@@ -18,7 +18,7 @@ apt-get install -y vim
 
 #Make setup folder
 echo -e "${GREEN}[*] Installing BugBounty Github Dotfiles to Home Directory${NC}"
-cd $HOME
+cd /tmp
 wget https://raw.githubusercontent.com/Gfuen/BugBountySetup/main/.bashrc 
 wget https://raw.githubusercontent.com/Gfuen/BugBountySetup/main/.tmux.conf 
 wget https://raw.githubusercontent.com/Gfuen/BugBountySetup/main/.vimrc 
