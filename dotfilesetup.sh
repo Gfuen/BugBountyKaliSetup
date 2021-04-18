@@ -14,13 +14,13 @@ fi
 apt-get install -y git
 apt-get install -y tmux
 apt-get install -y vim
+apt-get install -y dos2unix
 
 #Back up vim and bash config files
 echo -e "${GREEN}[*] Backup VIM and Bashrc${NC}"
 if [ -e .vimrc ]; then mv .vimrc .vimrc_bak; fi
 if [ -e .vim ]; then mv .vim .vim_bak; fi
 if [ -e .bashrc ]; then mv .bashrc .bashrc_bak; fi
-if [ -e .tmux.conf ]; then mv .tmux.conf .tmux.conf_bak; fi
 
 if [ -e /root/.vimrc ]; then mv /root/.vimrc /root/.vimrc_bak; fi
 if [ -e /root/.vim ]; then mv /root/.vim /root/.vim_bak; fi
@@ -32,6 +32,9 @@ echo -e "${GREEN}[*] Installing BugBounty Github Dotfiles to Home Directory${NC}
 wget https://raw.githubusercontent.com/Gfuen/BugBountySetup/main/.bashrc 
 wget https://raw.githubusercontent.com/Gfuen/BugBountySetup/main/.tmux.conf 
 wget https://raw.githubusercontent.com/Gfuen/BugBountySetup/main/.vimrc 
+dos2unix .bashrc
+dos2unix .tmux.conf
+dos2unix .vimrc
 
 #Create dotfiles Directory
 dotfilesDir=$(pwd)
