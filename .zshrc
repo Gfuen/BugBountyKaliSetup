@@ -79,7 +79,7 @@ plugins=(
 #plugins+=(zsh-nvm)
 
 source $ZSH/oh-my-zsh.sh
-source ~/.oh-my-zsh/plugins/zsh-autocomplete.plugin.zsh
+source ~/.oh-my-zsh/plugins/zsh-autocomplete
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
