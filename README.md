@@ -4,9 +4,10 @@ Command to install in Ubuntu/Kali Box
 
 
 ```
-wget https://raw.githubusercontent.com/Gfuen/BugBountySetup/main/Install.sh | bash
+wget https://raw.githubusercontent.com/Gfuen/BugBountySetup/main/dotfilesetup.sh
+wget https://raw.githubusercontent.com/Gfuen/BugBountySetup/main/zshinstall.sh
 
-or 
+gnome-tweaks #Set font to desireable font
 
-wget https://raw.githubusercontent.com/Gfuen/BugBountySetup/main/Install.sh | bash
+p10 configure #to setup prompt for shell
 ```
