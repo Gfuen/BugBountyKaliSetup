@@ -61,6 +61,40 @@ function httpsrv() {
     echo "Usage: httpsrv <port>"
     python -m SimpleHTTPServer $1
 }
+# cheat sheets (github.com/chubin/cheat.sh), find out how to use commands
+# example 'cheat tar'
+# for language specific question supply 2 args first for language, second as the question
+# eample: cheat python3 execute external program
+function cheat() {
+    if [ "$2" ]; then
+        curl "https://cheat.sh/$1/$2+$3+$4+$5+$6+$7+$8+$9+$10"
+    else
+        curl "https://cheat.sh/$1"
+    fi
+}
+function speedtest() {
+    curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3 -
+}
+function dadjoke() {
+    curl https://icanhazdadjoke.com
+}
+function dict() {
+    if [ "$3" ]; then
+        curl "dict://dict.org/d:$1 $2 $3"
+    elif [ "$2" ]; then
+        curl "dict://dict.org/d:$1 $2"
+    else
+        curl "dict://dict.org/d:$1"
+    fi
+}
+function ipgeo() {
+    # Specify ip or your ip will be used
+    if [ "$1" ]; then
+        curl "http://api.db-ip.com/v2/free/$1"
+    else
+        curl "http://api.db-ip.com/v2/free/$(myip)"
+    fi
+}
 
 #Alias to install package with pipx
 alias pinstall="python3 -m pipx install"
