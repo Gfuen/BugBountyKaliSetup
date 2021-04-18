@@ -7,6 +7,10 @@ then
     exit 1
 fi
 
+#Colors
+GREEN='\033[0;32m'
+NC='\033[0m'
+
 #Install git if not installed
 apt-get install -y git
 apt-get install -y tmux
@@ -19,10 +23,11 @@ wget https://raw.githubusercontent.com/Gfuen/BugBountySetup/main/.bashrc
 wget https://raw.githubusercontent.com/Gfuen/BugBountySetup/main/.tmux.conf 
 wget https://raw.githubusercontent.com/Gfuen/BugBountySetup/main/.vimrc 
 
-#Back up vim file
-echo -e "${GREEN}[*] Backup VIM${NC}"
+#Back up vim and bash config files
+echo -e "${GREEN}[*] Backup VIM and Bashrc${NC}"
 if [ -e .vimrc ]; then mv .vimrc .vimrc_bak; fi
 if [ -e .vim ]; then mv .vim .vim_bak; fi
+if [ -e .bashrc ]; then mv .bashrc .bashrc_bak; fi
 
 #Create dotfiles Directory
 dotfilesDir=$(pwd)
