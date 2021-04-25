@@ -10,28 +10,26 @@ export ZSH=$HOME/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
 
-ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_MODE='awesome-patched'
-POWERLEVEL9K_HOME_ICON=''
-POWERLEVEL9K_HOME_SUB_ICON=''
-POWERLEVEL9K_FOLDER_ICON=''
-DISABLE_AUTO_TITLE="true"
-POWERLEVEL9K_VCS_GIT_ICON=''
-POWERLEVEL9K_VCS_STAGED_ICON='\u00b1'
-POWERLEVEL9K_VCS_UNTRACKED_ICON='\u25CF'
-POWERLEVEL9K_VCS_UNSTAGED_ICON='\u00b1'
-POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON='\u2193'
-POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON='\u2191'
-POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='yellow'
-POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='yellow'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status os_icon context dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs virtualenv rbenv rvm time)
-POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
-POWERLEVEL9K_TIME_FORMAT="%D{%H:%M \uE868 %d.%m.%y}"
-POWERLEVEL9K_STATUS_VERBOSE=false
+POWERLEVEL9K_MODE='nerdfont-complete'
 
-export DEFAULT_USER="$USER"
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+POWERLEVEL9K_OS_ICON_BACKGROUND="white"
+POWERLEVEL9K_OS_ICON_FOREGROUND="blue"
+POWERLEVEL9K_DIR_HOME_FOREGROUND="white"
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="white"
+POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="white"
+
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
+
+# more prompt elements that are suggested
+# (public_ip docker_machine pyenv nvm)          https://github.com/bhilburn/powerlevel9k#prompt-customization
+# Note: using public_ip is cool but when connection is down prompt waits for 10-20 seconds
+
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir rbenv vcs)
+
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
