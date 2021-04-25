@@ -52,6 +52,14 @@ else
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
 fi
 
+if [ -d ~/.oh-my-zsh/custom/themes/powerlevel9k ]; then
+    cd ~/.oh-my-zsh/custom/themes/powerlevel9k && git pull
+else
+    git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+fi
+
+
+
 if [ -d ~/.oh-my-zsh/custom/plugins/k ]; then
     cd ~/.oh-my-zsh/custom/plugins/k && git pull
 else
