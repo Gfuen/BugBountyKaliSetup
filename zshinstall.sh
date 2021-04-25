@@ -11,7 +11,8 @@ else
 fi
 
 sudo add-apt-repository universe
-sudo apt install gnome-tweak-tool
+sudo apt install -y gnome-tweak-tool
+sudo apt install fonts-powerline
 
 if mv -n ~/.zshrc ~/.zshrc-backup-$(date +"%Y-%m-%d"); then # backup .zshrc
     echo -e "Backed up the current .zshrc to .zshrc-backup-date\n"
