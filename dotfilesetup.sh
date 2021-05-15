@@ -20,11 +20,9 @@ apt-get install -y dos2unix
 echo -e "${GREEN}[*] Backup VIM and Bashrc${NC}"
 if [ -e .vimrc ]; then mv .vimrc .vimrc_bak; fi
 if [ -e .vim ]; then mv .vim .vim_bak; fi
-if [ -e .bashrc ]; then mv .bashrc .bashrc_bak; fi
 
 if [ -e /root/.vimrc ]; then mv /root/.vimrc /root/.vimrc_bak; fi
 if [ -e /root/.vim ]; then mv /root/.vim /root/.vim_bak; fi
-if [ -e /root/.bashrc ]; then mv /root/.bashrc /root/.bashrc_bak; fi
 if [ -e /root/.tmux.conf ]; then mv /root/.tmux.conf /root/.tmux.conf_bak; fi
 
 #Install Vundle
@@ -34,10 +32,8 @@ git clone git://github.com/VundleVim/Vundle.vim.git
 
 #Make setup folder
 echo -e "${GREEN}[*] Installing BugBounty Github Dotfiles to Home Directory${NC}"
-wget https://raw.githubusercontent.com/Gfuen/BugBountySetup/main/.bashrc 
 wget https://raw.githubusercontent.com/Gfuen/BugBountySetup/main/.tmux.conf 
 wget https://raw.githubusercontent.com/Gfuen/BugBountySetup/main/.vimrc 
-dos2unix .bashrc
 dos2unix .tmux.conf
 dos2unix .vimrc
 
@@ -71,7 +67,6 @@ function linkDotfile {
 #Install Tmux plugin manager
 echo -e "${GREEN}[*] Installing Dotfiles${NC}"
 linkDotfile .vimrc
-linkDotfile .bashrc
 linkDotfile .tmux.conf
 
 #Install Tmux plugin manager

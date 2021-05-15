@@ -31,8 +31,8 @@ echo -e "${GREEN}[*] Installing Pipx${NC}"
 xterm -e bash -c 'python3 -m pip install pipx; python3 -m pipx ensurepath'
 
 #Make bash default shell
-echo -e "${GREEN}[*] Change default shell to bash${NC}"
-chsh -s /bin/bash
+echo -e "${GREEN}[*] Change default shell to Zsh${NC}"
+chsh -s /bin/zsh
 
 # Make sure pipx is installed
 echo -e "${GREEN}[*] Checking if PIPX is installed${NC}"
@@ -349,13 +349,13 @@ export GO111MODULE=on
 go get -v github.com/OWASP/Amass/v3/...
 
 #Refresh bash profile before installing pyenv
-echo -e "${GREEN}[*] Reload Bash profile${NC}"
-source ~/.bashrc
+echo -e "${GREEN}[*] Reload Zsh profile${NC}"
+source ~/.zshrc
 
 #Install pyenv
 echo -e "${GREEN}[*] Installing Pyenv${NC}"
 apt install -y build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
 curl https://pyenv.run | bash
-echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
-echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
-echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bashrc
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.zshrc
