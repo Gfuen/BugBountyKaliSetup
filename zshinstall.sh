@@ -10,9 +10,13 @@ else
     fi
 fi
 
+#Install font tools
 sudo add-apt-repository universe
 sudo apt install -y gnome-tweak-tool
 sudo apt install fonts-powerline
+#Set Timezone
+sudo timedatectl set-timezone America/Mexico_City
+
 
 if mv -n ~/.zshrc ~/.zshrc-backup-$(date +"%Y-%m-%d"); then # backup .zshrc
     echo -e "Backed up the current .zshrc to .zshrc-backup-date\n"
