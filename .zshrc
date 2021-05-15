@@ -368,7 +368,7 @@ alias s='source'
 alias sb='source ~/.bashrc'
 
 #Alias for source zsh profile
-alias zb='source ~/.zshrc'
+alias sz='source ~/.zshrc'
 
 #Copy progress bar
 alias cpv='rsync -ah --info=progress2'
@@ -423,8 +423,8 @@ alias startftp="systemctl restart pure-ftpd"
 alias stopftp="systemctl stop pure-ftpd"
 alias statusftp="systemctl status pure-ftp"
 
-#alias for PWK Connection
-alias pwk_ping="ping 10.11.1.220"
+#Config Dir
+alias configdir='cd ~/Config'
 
 #Nmap prettify
 alias nmap="grc nmap"
