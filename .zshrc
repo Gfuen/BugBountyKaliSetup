@@ -398,20 +398,8 @@ alias j='jobs -l'
 #Ports
 alias ports='netstat -tulanp'
 
-#HTB Start Openvpn
-alias htblab='sudo openvpn /home/kali/Desktop/PWK/Setup/Gfuen640.ovpn'
-
-#PWK Connect
-alias pwk='sudo openvpn /home/kali/Desktop/PWK/Setup/OS-86533-PWK.ovpn'
-
-#Change into PWK directory
-alias pwkdir='cd /home/kali/Desktop/PWK/OSCP/lab/'
-
-#Change into PUBLIC directory
-alias pwkpublic='cd /home/kali/Desktop/PWK/OSCP/lab/PUBLIC/'
-
-#Change into IT Directory
-alias pwkit='cd /home/kali/Desktop/PWK/OSCP/lab/IT/'
+#Change into Bug directory
+alias bug='cd /home/kali/Desktop/bug'
 
 #Change into directory
 alias ..='cd ../'
