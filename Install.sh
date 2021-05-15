@@ -30,7 +30,7 @@ apt-get install -y python3-venv
 echo -e "${GREEN}[*] Installing Pipx${NC}"
 xterm -e bash -c 'python3 -m pip install pipx; python3 -m pipx ensurepath'
 
-#Make bash default shell
+#Make Zsh default shell
 echo -e "${GREEN}[*] Change default shell to Zsh${NC}"
 chsh -s /bin/zsh
 
@@ -348,7 +348,7 @@ echo -e "${GREEN}[*] Installing amass${NC}"
 export GO111MODULE=on
 go get -v github.com/OWASP/Amass/v3/...
 
-#Refresh bash profile before installing pyenv
+#Refresh Zsh profile before installing pyenv
 echo -e "${GREEN}[*] Reload Zsh profile${NC}"
 source ~/.zshrc
 
