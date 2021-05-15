@@ -43,7 +43,7 @@ fi
 
 echo -e "Installing Nerd Fonts version of Hack, Roboto Mono, DejaVu Sans Mono\n"
 mkdir -p ~/.local/share/fonts
-wget -q --show-progress -N https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/FiraMono/Regular/complete/Fira%20Mono%20Regular%20Nerd%20Font%20Complete.otf -P ~/.local/share/fonts/
+wget -q --show-progress -N https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/FiraMono/Regular/complete/Fira%20Mono%20Regular%20Nerd%20Font%20Complete.otf?raw=true -P ~/.local/share/fonts/
 
 fc-cache -fv ~/.local/share/fonts/
 

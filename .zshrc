@@ -1,6 +1,8 @@
 export TERM="xterm-256color"
+
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -12,7 +14,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 POWERLEVEL9K_MODE='nerdfont-complete'
 
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 POWERLEVEL9K_MODE="nerdfont-complete"
 #Remove comments if on a ubuntu box without gui
 #POWERLEVEL9K_HOME_ICON=''
@@ -20,10 +22,19 @@ POWERLEVEL9K_MODE="nerdfont-complete"
 #POWERLEVEL9K_FOLDER_ICON=''
 #POWERLEVEL9K_ETC_ICON=''
 #POWERLEVEL9K_DISABLE_RPROMPT=true
+#POWERLEVEL9K_USER_ICON="\uF415" # 
+POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=''
+POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR=''
+POWERLEVEL9K_LEFT_SEGMENT_END_SEPARATOR=''
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_OS_ICON='\uF306'
+POWERLEVEL9K_TIME_BACKGROUND='blue'
 POWERLEVEL9K_TIME_FORMAT="%D{%H:%M}"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon user dir_writable dir vcs virtualenv)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs virtualenv)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
+POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+export DEFAULT_USER="$USER"
+
 
 
 # Uncomment the following line to use case-sensitive completion.
@@ -104,8 +115,7 @@ source ~/.oh-my-zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Add to PATH to Install and run programs with "pip install --user"
-export PATH=$PATH:~/.local/bin
+
 
 export MARKER_KEY_NEXT_PLACEHOLDER="\C-b"   #change maker key binding from Ctr+t to Ctr+b
 
@@ -242,6 +252,9 @@ nsearch() {
 
 #Aliases
 #---------------------------------------------------
+
+#Show icons for fonts for oh my zsh prompt
+alias gicon="get_icon_names"
 
 #Aliases Python Shortcuts
 alias p="python $1" # saves typing python every time.
@@ -496,9 +509,6 @@ bracket="${txtpur}"
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
-
-# append to the history file, don't overwrite it
-shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=5000
