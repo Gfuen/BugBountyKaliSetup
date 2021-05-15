@@ -97,17 +97,9 @@ apt-get install seclists
 echo -e "${GREEN}[*] Installing Python SSL Module${NC}"
 sudo apt-get install -y libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev
 
-#Install fzf for CommandLine
-echo -e "${GREEN}[*] Installing FZF${NC}"
-apt-get install fzf
-
 #Install exa
 echo -e "${GREEN}[*] Installing EXA${NC}"
 apt install exa
-
-# enable command aliasing
-echo -e "${GREEN}[*] Enable Command Aliasing${NC}"
-shopt -s expand_aliases
 
 #Make folders
 cd /home/kali/Desktop/
@@ -359,3 +351,8 @@ curl https://pyenv.run | bash
 echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
 echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
 echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.zshrc
+
+#Init Metasploit
+systemctl start postgresql
+systemctl enable postgresql
+msfdb init
