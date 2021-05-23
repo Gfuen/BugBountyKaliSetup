@@ -260,6 +260,9 @@ nsearch() {
 #Aliases
 #---------------------------------------------------
 
+#Alias for converting python code
+alias convert="2to3 . -w"
+
 #Show icons for fonts for oh my zsh prompt
 alias gicon="get_icon_names"
 
