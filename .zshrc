@@ -141,38 +141,25 @@ export MARKER_KEY_NEXT_PLACEHOLDER="\C-b"   #change maker key binding from Ctr+t
 pxinstall() {
     python3 -m pipx install git+$1
 }
-
-dirsearch() {
-    echo "Usage: dirsearch.py <url> <extension(s) ..: "*"> <wordlist>"
-    python3 ~/Tools/dirsearch/dirsearch.py -u $1 -e $2 -t 100 -w $3
-}
-dirsearch_r() {
-    echo "Usage: dirsearch.py <url> <extension(s) for example ..: "*"> <wordlist>"
-    python3 ~/Tools/dirsearch/dirsearch.py -u $1 -e $2 -t 100 -r 4 -w $3
+nmap_stealth() {
+    echo "Usage: nmap_stealth <output filename> <ip>"
+    nmap -sS -oN $1 $2
 }
 nmap_fast() {
-    echo "Usage: nmap_fast <output.txt> <ip/24>"
-    nmap -sV -O --top-ports 200 --open -oA $1 $2
+    echo "Usage: nmap_fast <output filename> <ip>"
+    nmap -Pn -n -vvv --top-ports 200 --open -oN $1 $2
 }
 nmap_full() {
-    echo "Usage: nmap_full <output.txt> <ip/24>"
-    nmap -sC -sV -O --open -p- -oA $1 $2
+    echo "Usage: nmap_full <output filename> <ip>"
+    nmap -Pn -n -vvv -oN  $1 $2
 }
 nmap_udp() {
-    echo "Usage: nmap_udp <output.txt> <ip/24>"
-    nmap -sU -p- -oA $1 $2
+    echo "Usage: nmap_udp <ports> <output filename> <ip>"
+    nmap -Pn -n -vvv -sU --top-ports 1000 -oN $1 $2
 }
-nmap_recon() {
-    echo "Usage: nmap_recon <output.txt> <ip/24>"
-    nmap -sC -sV -oA $1 $2
-}
-dirb_without_auth() {
-    echo "Usage: dirb <url> <wordlist> <output.txt>"
-    dirb $1 $2 -o $3 -N 302,404 -R -w
-}
-dirb_with_auth() {
-    echo "Usage: drib <url> <wordlist> <output.txt> <user> <password>"
-    dirb $1 $2 -o $3 -N 302,404 -R -w -u $4:$5
+nmap_port() {
+    echo "Usage: nmap_port <ports> <output filename> <ip>"
+    nmap -Pn -n -vvv -p $1 -oN $2 $3
 }
 nikto_without_auth() {
     echo "Usage: nikto <output.txt> <url>"
@@ -190,7 +177,10 @@ httpsrv() {
     echo "Usage: httpsrv <port>"
     python -m SimpleHTTPServer $1
 }
-
+ferox() {
+    echo "Usage: feroxbuster <url> <extensions ex: js,html,etc...> <output.txt> <wordlist>"
+    feroxbuster -u $1 -x $2 -e -r -vv -o $3 -w $4
+}
 cheat() {
     if [ "$2" ]; then
         curl "https://cheat.sh/$1/$2+$3+$4+$5+$6+$7+$8+$9+$10"
@@ -201,7 +191,6 @@ cheat() {
 speedtest() {
     curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3 -
 }
-
 dadjoke() {
     curl https://icanhazdadjoke.com
 }
@@ -261,7 +250,7 @@ nsearch() {
 #Aliases
 #---------------------------------------------------
 
-#Alias for converting python code
+#Alias to convert python 2 code to python3
 alias convert="2to3 . -w"
 
 #Show icons for fonts for oh my zsh prompt
@@ -372,7 +361,7 @@ alias s='source'
 alias sb='source ~/.bashrc'
 
 #Alias for source zsh profile
-alias sz='source ~/.zshrc'
+alias zb='source ~/.zshrc'
 
 #Copy progress bar
 alias cpv='rsync -ah --info=progress2'
@@ -402,8 +391,23 @@ alias j='jobs -l'
 #Ports
 alias ports='netstat -tulanp'
 
-#Change into Bug directory
-alias bug='cd /home/kali/Desktop/bug'
+#HTB Start Openvpn
+alias htblab='sudo openvpn ~/Config/Gfuen640.ovpn'
+
+#Config Dir
+alias configdir='cd ~/Config'
+
+#PWK Connect
+#alias pwk='sudo openvpn ~/Config/OS-86533-PWK.ovpn'
+
+#Change into PWK directory
+#alias pwkdir='cd /home/kali/Desktop/PWK/OSCP/lab/'
+
+#Change into PUBLIC directory
+#alias pwkpublic='cd /home/kali/Desktop/PWK/OSCP/lab/PUBLIC/'
+
+#Change into IT Directory
+#alias pwkit='cd /home/kali/Desktop/PWK/OSCP/lab/IT/'
 
 #Change into directory
 alias ..='cd ../'
@@ -427,8 +431,8 @@ alias startftp="systemctl restart pure-ftpd"
 alias stopftp="systemctl stop pure-ftpd"
 alias statusftp="systemctl status pure-ftp"
 
-#Config Dir
-alias configdir='cd ~/Config'
+#alias for PWK Connection
+alias pwkping="ping 10.11.1.220"
 
 #Nmap prettify
 alias nmap="grc nmap"
@@ -440,23 +444,18 @@ alias less='less -FSRXc'
 #-------------------------------------------------------------------------------
 
 #Export Env Variables
-export WORD0="/usr/share/dirb/wordlists/big.txt"
 export WORD1="/usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt"
 export WORD2="/usr/share/wordlists/dirbuster/directory-list-2.3-small.txt"
-export WORD3="/usr/share/wordlists/rockyou.txt"
-export WORD4="/usr/share/wordlists/dirbuster/apache-user-enum-1.0.txt"
-export WORD5="/usr/share/wordlists/dirbuster/apache-user-enum-2.0.txt"
-export WORD6="/usr/share/wordlists/dirb/others/best1050.txt"
-export WORD7="/usr/share/wordlists/dirb/others/names.txt"
+export WORD3="/usr/share/dirb/wordlists/big.txt"
+export WORD4="/usr/share/wordlists/common.txt"
+export USER1="/usr/share/wordlists/dirb/others/names.txt"
+export PASS1="/usr/share/wordlists/rockyou.txt"
+export PASS2="/usr/share/wordlists/dirb/others/best15.txt"
+export PASS3="/usr/share/wordlists/dirb/others/best115.txt"
 export SECLISTS="/usr/share/seclists"
 export WORDDIR="/usr/share/wordlists"
-export TARGET_RANGE="10.11.1.1-255"
-export PWK_CONTROL="https://10.70.70.70/oscpanel/labcpanel.php?md=aa04b57c7f43f59f194decebb776223e&pid=792549&servers=0"
-export GIT_PASS="09d200ef8f3d9f170655cbad5cb9cadf22bca4b5"
 export TOOLS="~/Tools/"
 export SCRIPT="~/Scripts/"
-export USER="OS-86533"
-export PASS="7vZGkrq9xL1"
 export FTP_USER="offsec"
 export FTP_PASS="lab"
 
