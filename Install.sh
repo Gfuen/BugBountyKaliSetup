@@ -70,7 +70,6 @@ apt-get install -y perl
 apt-get install -y nikto
 apt-get install -y dnsutils 
 apt-get install -y net-tools
-apt-get install -y zsh
 apt-get install -y nano
 apt-get install -y tmux
 
@@ -127,14 +126,6 @@ python3 -m pipx ensurepath
 echo -e "${GREEN}[*] Installing rockyou.txt${NC}"
 gunzip /usr/share/wordlists/rockyou.txt.gz 2>/dev/null
 ln -s /usr/share/wordlists ~/Downloads/wordlists 2>/dev/null
-
-#Install packages for dirsearch
-echo -e "${GREEN}[*] Installing dirsearch${NC}"
-python3 -m pipx install urllib3
-python3 -m pipx install chardet
-python3 -m pipx install certifi
-cd ~/Tools
-git clone https://github.com/maurosoria/dirsearch.git
 
 #Install Autorecon
 echo -e "${GREEN}[*] Installing Autorecon${NC}"
