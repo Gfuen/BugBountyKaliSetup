@@ -250,6 +250,9 @@ nsearch() {
 #Aliases
 #---------------------------------------------------
 
+#Alias for axiom
+alias axiom="bash axiom"
+
 #Alias to convert python 2 code to python3
 alias convert="2to3 . -w"
 
